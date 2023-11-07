@@ -1,0 +1,72 @@
+$color-primary: rgb(0, 153, 204);
+$color-p1: rgb(35, 38, 39);
+$color-p2: rgb(30, 31, 32);
+$color-p3: rgb(36, 38, 46);
+$color-p4: rgb(55, 57, 63);
+$radius: 5px;
+
+body {
+    background-color: $color-p2;
+}
+
+ul,li{
+    list-style: none;
+}
+
+span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.m-input {
+    color: rgb(232, 230, 227);
+    background-color: rgb(33, 36, 37);
+    background-image: none;
+    border: none;
+    outline: none;
+    display: inline-block;
+    padding: 15px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px inset rgba($color: #fff, $alpha: 0.1);
+    flex-grow: 1;
+
+    &:focus {
+        box-shadow: 0 0 5px inset rgba($color: #fff, $alpha: 1);
+    }
+}
+
+.m-button {
+    padding: 15px 30px;
+    color: white;
+    background-color: $color-primary;
+    outline: none;
+    border: 0px;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 2px;
+
+    &:hover {
+        background-color: rgba(50, 198, 247, 0.8);
+    }
+}
+
+.m-inputBox {
+    overflow: hidden;
+    border-radius: $radius;
+    display: flex;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}

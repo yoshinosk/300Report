@@ -1,0 +1,65 @@
+body {
+  background-color: #1e1f20;
+}
+
+ul, li {
+  list-style: none;
+}
+
+span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.m-input {
+  color: #e8e6e3;
+  background-color: #212425;
+  background-image: none;
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 15px;
+  transition: 0.3s;
+  box-shadow: 0 0 5px inset rgba(255, 255, 255, 0.1);
+  flex-grow: 1;
+}
+
+.m-input:focus {
+  box-shadow: 0 0 5px inset white;
+}
+
+.m-button {
+  padding: 15px 30px;
+  color: white;
+  background-color: #0099cc;
+  outline: none;
+  border: 0px;
+  transition: 0.3s;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.m-button:hover {
+  background-color: rgba(50, 198, 247, 0.8);
+}
+
+.m-inputBox {
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
