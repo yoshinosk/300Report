@@ -145,7 +145,7 @@ onMounted(() => {
  * @descript 获取当前对局详细数据
  */
 async function getMatchInfo() {
-  post("https://300report.jumpw.com/api/battle/searchMatchinfo", {
+  post("/api/battle/searchMatchinfo", {
     mtid: props.match.MTID,
   })
     .then((res) => {

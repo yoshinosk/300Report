@@ -95,7 +95,7 @@ function handleScroll(event) {
 function getMatchList() {
   if (loadmore.value != "loadmore") return false;
   loadmore.value = "loading";
-  post("https://300report.jumpw.com/api/battle/searchMatchs", {
+  post("/api/battle/searchMatchs", {
     RoleID: store.role.RoleID,
     MatchType: matchType.value,
     searchIndex: page.value,

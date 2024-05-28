@@ -1,6 +1,7 @@
 <template>
-  <div class="home box">
-    <h3 class="title">角色绑定</h3>
+  <div class="home">
+    <div class="box">
+      <h3 class="title">角色绑定</h3>
     <div class="bind">
       <div class="m-inputBox">
         <input
@@ -24,6 +25,15 @@
         <span class="autoBtn" @click.stop="handleSetAuto(index)" :class="{active: item.AutoLoad }">自动加载</span>
       </li>
     </ul>
+    </div>
+    <div class="box notic">
+      <span>战绩网接口不允许跨域了，需要装插件才能用。</span>
+      <span>用的什么浏览器就点哪个进去装</span>
+      <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/" target="_blank">Chrome</a>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-unblock/" target="_blank">Firefox</a>
+      <a href="https://microsoftedge.microsoft.com/addons/detail/cors-unblock/hkjklmhkbkdhlgnnfbbcihcajofmjgbh" target="_blank">Edge</a> 
+      <span class="iconTips">要查战绩的时候点插件图标启用<img src="@/assets/img/tips.png">，不查的时候记得关掉。</span>
+    </div>
   </div>
 </template>
 
@@ -38,7 +48,7 @@ const roleName = ref(""),
 // 点击查询
 function handleBind() {
   if (!roleName.value) return "";
-  post("https://300report.jumpw.com/api/battle/searchNormal?type=h5", {
+  post("/api/battle/searchNormal?type=h5", {
     AccountID: "0",
     Guid: "0",
     RoleName: roleName.value,
@@ -148,8 +158,23 @@ onMounted(() => {
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
-  padding: 30px;
-  width: 500px;
+  padding: 0;
+  width: 550px;
+  .notic{
+    a{
+      display: inline-block;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+    .iconTips{
+      display: flex;
+      align-items: center;
+      img{height: 30px;width: 30px;margin-left: 3px;}
+    }
+  }
+  .box{
+    margin: 10px 0!important;
+  }
   .title {
     text-align: center;
     position: relative;

@@ -1,10 +1,13 @@
 import { store } from "../../composables/store";
 import qs from 'qs';
 
+const HOST = "https://300report.jumpw.com";
+
+
 export const request = (url, option) => {
     store.loading = true;
     return new Promise((resolve, reject) => {
-        fetch(url, {
+        fetch(process.env.NODE_ENV === "development" ? url : HOST + url, {
             mode:'cors',
             ...option
         }).then(res => res.json()).then(res => {
